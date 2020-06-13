@@ -399,6 +399,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tori2p" class="md-nav__link">
+    Tor/I2P
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#node-rpc-api" class="md-nav__link">
     Node RPC API
   </a>
@@ -1135,6 +1142,13 @@
 </li>
         
           <li class="md-nav__item">
+  <a href="#tori2p" class="md-nav__link">
+    Tor/I2P
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
   <a href="#node-rpc-api" class="md-nav__link">
     Node RPC API
   </a>
@@ -1289,7 +1303,7 @@
 <p>In fact, you can connect to a remote <code>monerod</code> instance provided by a semi-trusted 3rd party. Such 3rd party will not be able to steal your funds. This is very handy for learning and experimentation.</p>
 <p>However, there are privacy and reliability implications to using a remote, untrusted node. For any real business <strong>you should be running your own full node</strong>.</p>
 <h2 id="syntax">Syntax<a class="headerlink" href="#syntax" title="Permanent link">&para;</a></h2>
-<p><code>./monerod [options] [command]</code> </p>
+<p><code>./monerod [options] [command]</code></p>
 <p>Options define how the daemon should be working. Their names follow the <code>--option-name</code> pattern.</p>
 <p>Commands give access to specific services provided by the daemon. Commands are executed against the running daemon.
 Their names follow the <code>command_name</code> pattern.</p>
@@ -1331,7 +1345,11 @@ tail -f ~/.bitmonero/bitmonero.log           # watch the logs
 </tr>
 <tr>
 <td><code>--os-version</code></td>
-<td>Show build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Fri Aug 24 12:48:58 UTC 2018 4.18.5-arch1-1-ARCH</code>.</td>
+<td>Show build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Wed, 27 May 2020 23:42:26 +0000 5.6.15-arch1-1</code>.</td>
+</tr>
+<tr>
+<td><code>--check-updates</code></td>
+<td>One of: <code>disabled</code> | <code>notify</code> | <code>download</code> (=<code>notify</code> by default). Check for new versions of Monero and optionally download it. You should probably prefer your OS package manager to do the update, if possible. There is also unimplemented <code>update</code> option shown by the help system.</td>
 </tr>
 </tbody>
 </table>
@@ -1417,6 +1435,10 @@ tail -f ~/.bitmonero/bitmonero.log           # watch the logs
 <td>Do not require tty in a foreground mode. Helpful when running in a container. By default <code>monerod</code> runs in a foreground and opens stdin for reading. This breaks containerization because no tty gets assigned and <code>monerod</code> process crashes. You can make it run in a background with <code>--detach</code> but this is inconvenient in a containerized environment because the canonical usage is that the container waits on the main process to exist (forking makes things more complicated).</td>
 </tr>
 <tr>
+<td><code>--no-zmq</code></td>
+<td>Disable ZMQ RPC server. You <strong>should</strong> use this option to limit attack surface and number of unnecessarily open ports (the ZMQ server is unfinished thing and you are unlikely to ever use it).</td>
+</tr>
+<tr>
 <td><code>--no-igd</code></td>
 <td>Disable UPnP port mapping on the router ("Internet Gateway Device"). Add this option to improve security if you are <strong>not</strong> behind a NAT (you can bind directly to public IP or you run through Tor).</td>
 </tr>
@@ -1448,7 +1470,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tbody>
 <tr>
 <td><code>--p2p-bind-ip</code></td>
-<td>Network interface to bind to for p2p network protocol. Default value <code>0.0.0.0</code> binds to all network interfaces. This is typically what you want. <br /><br />You must change this if you want to constrain binding, for example to configure connection through Tor via torsocks: <br /><code>DNS_PUBLIC=tcp://1.1.1.1 TORSOCKS_ALLOW_INBOUND=1 torsocks ./monerod --p2p-bind-ip 127.0.0.1 --no-igd --hide-my-port</code></td>
+<td>IPv4 network interface to bind to for p2p network protocol. Default value <code>0.0.0.0</code> binds to all network interfaces. This is typically what you want. <br /><br />You must change this if you want to constrain binding, for example to configure connection through Tor via torsocks: <br /><code>DNS_PUBLIC=tcp://1.1.1.1 TORSOCKS_ALLOW_INBOUND=1 torsocks ./monerod --p2p-bind-ip 127.0.0.1 --no-igd --hide-my-port</code></td>
 </tr>
 <tr>
 <td><code>--p2p-bind-port</code></td>
@@ -1457,6 +1479,18 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--p2p-external-port</code></td>
 <td>TCP port to listen for p2p network connections on your router. Relevant if you are behind a NAT and still want to accept incoming connections. You must then set this to relevant port on your router. This is to let <code>monerod</code> know what to advertise on the network. Default is <code>0</code>.</td>
+</tr>
+<tr>
+<td><code>--p2p-use-ipv6</code></td>
+<td>Enable IPv6 for p2p.</td>
+</tr>
+<tr>
+<td><code>--p2p-bind-ipv6-address</code></td>
+<td>IPv6 network interface to bind to for p2p network protocol. Default value <code>::</code> binds to all network interfaces.</td>
+</tr>
+<tr>
+<td><code>--p2p-ignore-ipv4</code></td>
+<td>Ignore unsuccessful IPv4 bind for p2p. Useful if you only want to use IPv6.</td>
 </tr>
 <tr>
 <td><code>--hide-my-port</code></td>
@@ -1508,6 +1542,26 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </tbody>
 </table>
+<h4 id="tori2p">Tor/I2P<a class="headerlink" href="#tori2p" title="Permanent link">&para;</a></h4>
+<p>This is experimental. It may be best to start with this <a href="https://github.com/monero-project/monero/blob/master/ANONYMITY_NETWORKS.md#p2p-commands">guide</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Option</th>
+<th>Description</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td><code>--tx-proxy</code></td>
+<td>Send out your local transactions through SOCKS5 proxy (Tor or I2P). Format:<br /><code>&lt;network-type&gt;,&lt;socks-ip:port&gt;[,max_connections][,disable_noise]</code> <br /><br />Example:<br /><code>./monerod --tx-proxy "tor,127.0.0.1:9050,10,disable_noise"</code><br /><br />This was introduced to make publishing transactions over Tor easier (no need for torsocks) while allowing clearnet for blocks at the same time (while torsocks affected everything). <br /><br />Note that forwarded transactions (those not originating from connected wallet) will still be relayed over clearnet.<br /><br />Requires multiple <code>--add-peer</code>. See <a href="https://github.com/monero-project/monero/pull/6021">commit</a> and <a href="https://github.com/monero-project/monero/blob/master/ANONYMITY_NETWORKS.md#p2p-commands">guide</a>.</td>
+</tr>
+<tr>
+<td><code>--anonymous-inbound</code></td>
+<td>Allow anonymous incoming connections to your onionized P2P interface. Format: <br /><code>&lt;hidden-service-address&gt;,&lt;[bind-ip:]port&gt;[,max_connections]</code><br /><br />Example:<br /><code>./monerod --anonymous-inbound "rveahdfho7wo4b2m.onion:18083,127.0.0.1:18083,100"</code>.<br /><br />Obviously, you first need to setup the hidden service in your Tor config. See the <a href="https://github.com/monero-project/monero/blob/master/ANONYMITY_NETWORKS.md#p2p-commands">guide</a>.</td>
+</tr>
+</tbody>
+</table>
 <h4 id="node-rpc-api">Node RPC API<a class="headerlink" href="#node-rpc-api" title="Permanent link">&para;</a></h4>
 <p><code>monerod</code> node offers powerful API. It serves 3 purposes:</p>
 <ul>
@@ -1525,6 +1579,10 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 </thead>
 <tbody>
+<tr>
+<td><code>--public-node</code></td>
+<td>Advertise to other users they can use this node as a remote one for connecting their wallets. Requires <code>--restricted-rpc</code>, <code>--rpc-bind-ip</code> and <code>--confirm-external-bind</code>. Without <code>--public-node</code> the node can still be public (assuming other relevant options are set) but won't be advertised as such on the P2P network. This option will allow wallets to auto-discover public nodes (instead of requiring user to manually find one).</td>
+</tr>
 <tr>
 <td><code>--rpc-bind-ip</code></td>
 <td>IP to listen on. By default <code>127.0.0.1</code> because API gives full administrative capabilities over the node. Set it to <code>0.0.0.0</code> to listen on all interfaces - but only in connection with one of <code>*-restricted-*</code> options <strong>and</strong>  <code>--confirm-external-bind</code>.</td>
@@ -1590,6 +1648,14 @@ This is for node-to-node communication. The following options do <strong>not</st
 </thead>
 <tbody>
 <tr>
+<td><code>--prune-blockchain</code></td>
+<td>Pruning saves 2/3 of disk space w/o degrading functionality. For maximum effect this should be used already <strong>on the first sync</strong>. If you add this option later the past data will only be pruned logically w/o shrinking the file size and the gain will be delayed. <br /><br />If you already have unpruned blockchain, see the <code>monero-blockchain-prune</code> tool. <br /><br />The drawback is that you will contribute less to Monero P2P network in terms of helping new nodes to sync up (up to 1/8 of normal contribution). You will still be useful regarding relaying new transactions and blocks though.</td>
+</tr>
+<tr>
+<td><code>--sync-pruned-blocks</code></td>
+<td>Allow syncing from nodes with only pruned blocks.</td>
+</tr>
+<tr>
 <td><code>--db-sync-mode</code></td>
 <td>Specify sync option, using format:<br /><code>[safe|fast|fastest]:[sync|async]:[&lt;nblocks_per_sync&gt;[blocks]|&lt;nbytes_per_sync&gt;[bytes]]</code><br /><br />The default is <code>fast:async:250000000bytes</code>.<br /><br />The <code>fast:async:*</code> can corrupt blockchain database in case of a system crash. It should not corrupt if just <code>monerod</code> crashes. If you are concerned with system crashes use <code>safe:sync</code>.</td>
 </tr>
@@ -1616,6 +1682,10 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--bootstrap-daemon-login</code></td>
 <td>Specify username:password for the bootstrap daemon login (if required). This considers the RPC interface used by the wallet. Normally, open nodes do not require any credentials.</td>
+</tr>
+<tr>
+<td><code>--no-sync</code></td>
+<td>Do not sync up. Continue using bootstrap daemon instead (if set). See <a href="https://github.com/monero-project/monero/pull/5195">commit</a>.</td>
 </tr>
 </tbody>
 </table>
@@ -1680,6 +1750,10 @@ This is for node-to-node communication. The following options do <strong>not</st
 </thead>
 <tbody>
 <tr>
+<td><code>--keep-alt-blocks</code></td>
+<td>Keep alternative blocks on restart. May help with researching reorgs etc. <a href="https://github.com/monero-project/monero/pull/5524">Commit</a>. Research project <a href="https://www.noncesense.org/">www.noncesense.org</a>.</td>
+</tr>
+<tr>
 <td><code>--test-drop-download</code></td>
 <td>For net tests: in download, discard ALL blocks instead checking/saving them (very fast).</td>
 </tr>
@@ -1690,6 +1764,10 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--regtest</code></td>
 <td>Run in a regression testing mode.</td>
+</tr>
+<tr>
+<td><code>--keep-fakechain</code></td>
+<td>Don't delete any existing database when in fakechain mode.</td>
 </tr>
 <tr>
 <td><code>--fixed-difficulty</code></td>
@@ -1729,7 +1807,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 <tr>
 <td><code>--zmq-rpc-bind-ip</code></td>
-<td>IP for ZMQ RPC server to listen on. By default <code>127.0.0.1</code>. This is not yet widely used as ZMQ interface currently does not provide meaningful advantage over classic JSON-RPC interface. Unfortunately, currently there is no way to disable the ZMQ server.</td>
+<td>IP for ZMQ RPC server to listen on. By default <code>127.0.0.1</code>. This is not yet widely used as ZMQ interface currently does not provide meaningful advantage over classic JSON-RPC interface.</td>
 </tr>
 <tr>
 <td><code>--zmq-rpc-bind-port</code></td>
@@ -1748,7 +1826,7 @@ Their names follow the <code>command_name</code> pattern.</p>
 <p>The following groups are only to make reference easier to follow.
 The daemon itself does not group commands in any way.</p>
 <p>See <a href="#running">running</a> for example usage.
-You can also type commands directly in the console of the running <code>monerod</code> (if not detached). </p>
+You can also type commands directly in the console of the running <code>monerod</code> (if not detached).</p>
 <h4 id="help-version-status">Help, version, status<a class="headerlink" href="#help-version-status" title="Permanent link">&para;</a></h4>
 <table>
 <thead>
