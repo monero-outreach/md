@@ -1482,7 +1482,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 <tr>
 <td><code>--p2p-use-ipv6</code></td>
-<td>Enable IPv6 for p2p.</td>
+<td>Enable IPv6 for p2p (disabled by default).</td>
 </tr>
 <tr>
 <td><code>--p2p-bind-ipv6-address</code></td>
@@ -1491,6 +1491,10 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--p2p-ignore-ipv4</code></td>
 <td>Ignore unsuccessful IPv4 bind for p2p. Useful if you only want to use IPv6.</td>
+</tr>
+<tr>
+<td><code>--igd</code></td>
+<td>Set UPnP port mapping on the router ("Internet Gateway Device"). One of: <code>disabled</code> | <code>enabled</code> | <code>delayed</code> (=<code>delayed</code> by default). Relevant if you are behind NAT and want to accept incoming P2P network connections. The <code>delayed</code> value means it will wait for incoming connections in hope UPnP may not be necessary. After a while w/o incoming connections found it will attempt to map ports with UPnP. If you know you need UPnP change it to <code>enabled</code> to fast track the process.</td>
 </tr>
 <tr>
 <td><code>--hide-my-port</code></td>
@@ -1560,6 +1564,10 @@ This is for node-to-node communication. The following options do <strong>not</st
 <td><code>--anonymous-inbound</code></td>
 <td>Allow anonymous incoming connections to your onionized P2P interface. Format: <br /><code>&lt;hidden-service-address&gt;,&lt;[bind-ip:]port&gt;[,max_connections]</code><br /><br />Example:<br /><code>./monerod --anonymous-inbound "rveahdfho7wo4b2m.onion:18083,127.0.0.1:18083,100"</code>.<br /><br />Obviously, you first need to setup the hidden service in your Tor config. See the <a href="https://github.com/monero-project/monero/blob/master/ANONYMITY_NETWORKS.md#p2p-commands">guide</a>.</td>
 </tr>
+<tr>
+<td><code>--pad-transactions</code></td>
+<td>Pad relayed transactions to next 1024 bytes to help defend against traffic volume analysis. This only makes sense if you are behind Tor or I2P. See <a href="https://github.com/monero-project/monero/pull/4787">commit</a>.</td>
+</tr>
 </tbody>
 </table>
 <h4 id="node-rpc-api">Node RPC API<a class="headerlink" href="#node-rpc-api" title="Permanent link">&para;</a></h4>
@@ -1592,6 +1600,46 @@ This is for node-to-node communication. The following options do <strong>not</st
 <td>TCP port to listen on. By default <code>18081</code> (mainnet), <code>28081</code> (testnet), <code>38081</code> (stagenet).</td>
 </tr>
 <tr>
+<td><code>--rpc-bind-ipv6-address</code></td>
+<td>IPv6 to listen on. By default <code>::1</code> (localhost). All remarks for <code>--rpc-bind-ip</code> are applicable here as well.</td>
+</tr>
+<tr>
+<td><code>--rpc-use-ipv6</code></td>
+<td>Enable IPv6 for RPC server (disabled by default).</td>
+</tr>
+<tr>
+<td><code>--rpc-ignore-ipv4</code></td>
+<td>Ignore unsuccessful IPv4 bind for RPC. Useful if you only want to use IPv6.</td>
+</tr>
+<tr>
+<td><code>--rpc-ssl</code></td>
+<td>Enable TLS on RPC connections. One of: <code>enabled</code> | <code>disabled</code> | <code>autodetect</code> (<code>=autodetect</code> by default). You <strong>should</strong> enable this if you connect a remote wallet.</td>
+</tr>
+<tr>
+<td><code>--rpc-ssl-private-key</code></td>
+<td>Path to server's private key in PEM format. Generate it with <code>monero-gen-ssl-cert</code> tool. This is to facilitate server authentication to client.</td>
+</tr>
+<tr>
+<td><code>--rpc-ssl-certificate</code></td>
+<td>Path to server's certificate in PEM format. Generate it with <code>monero-gen-ssl-cert</code> tool. This is to facilitate server authentication to client.</td>
+</tr>
+<tr>
+<td><code>--rpc-ssl-allowed-fingerprints</code></td>
+<td>List of certificate fingerprints to accept. This is a way to authenticate clients.</td>
+</tr>
+<tr>
+<td><code>--rpc-ssl-allow-any-cert</code></td>
+<td>Allow any certificate of connecting client.</td>
+</tr>
+<tr>
+<td><code>--rpc-ssl-ca-certificates</code></td>
+<td>Path to file containing concatenated PEM format certificate(s) to replace system CA(s).</td>
+</tr>
+<tr>
+<td><code>--rpc-ssl-allow-chained</code></td>
+<td>Allow user chained certificates. This is only applicable if user has a "real" CA issued certificate.</td>
+</tr>
+<tr>
 <td><code>--rpc-restricted-bind-port</code></td>
 <td>TCP port to listen on with the limited version of API. The limited API can be made public to create an Open Node. At the same time, you may firewall the full API port to still enjoy local querying and administration.</td>
 </tr>
@@ -1605,7 +1653,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 <tr>
 <td><code>--rpc-login</code></td>
-<td>Specify <code>username[:password]</code> required to connect to API. Practical usage seems limited because API communication is in plain text over HTTP.</td>
+<td>Specify <code>username[:password]</code> required to connect to API.</td>
 </tr>
 <tr>
 <td><code>--rpc-access-control-origins</code></td>
