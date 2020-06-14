@@ -1612,6 +1612,18 @@ This is for node-to-node communication. The following options do <strong>not</st
 <td>Ignore unsuccessful IPv4 bind for RPC. Useful if you only want to use IPv6.</td>
 </tr>
 <tr>
+<td><code>--rpc-restricted-bind-port</code></td>
+<td>TCP port to listen on with the limited version of API. The limited API can be made public to create an Open Node. At the same time, you may firewall the full API port to still enjoy local querying and administration.</td>
+</tr>
+<tr>
+<td><code>--confirm-external-bind</code></td>
+<td>Confirm you consciously set <code>--rpc-bind-ip</code> to non-localhost IP and you understand the consequences.</td>
+</tr>
+<tr>
+<td><code>--restricted-rpc</code></td>
+<td>Restrict API to view only commands and do not return privacy sensitive data. Note this does not make sense with <code>--rpc-restricted-bind-port</code> because you would end up with two restricted APIs.</td>
+</tr>
+<tr>
 <td><code>--rpc-ssl</code></td>
 <td>Enable TLS on RPC connections. One of: <code>enabled</code> | <code>disabled</code> | <code>autodetect</code> (<code>=autodetect</code> by default). You <strong>should</strong> enable this if you connect a remote wallet.</td>
 </tr>
@@ -1638,18 +1650,6 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--rpc-ssl-allow-chained</code></td>
 <td>Allow user chained certificates. This is only applicable if user has a "real" CA issued certificate.</td>
-</tr>
-<tr>
-<td><code>--rpc-restricted-bind-port</code></td>
-<td>TCP port to listen on with the limited version of API. The limited API can be made public to create an Open Node. At the same time, you may firewall the full API port to still enjoy local querying and administration.</td>
-</tr>
-<tr>
-<td><code>--confirm-external-bind</code></td>
-<td>Confirm you consciously set <code>--rpc-bind-ip</code> to non-localhost IP and you understand the consequences.</td>
-</tr>
-<tr>
-<td><code>--restricted-rpc</code></td>
-<td>Restrict API to view only commands and do not return privacy sensitive data. Note this does not make sense with <code>--rpc-restricted-bind-port</code> because you would end up with two restricted APIs.</td>
 </tr>
 <tr>
 <td><code>--rpc-login</code></td>
