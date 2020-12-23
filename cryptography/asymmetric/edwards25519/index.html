@@ -17,7 +17,7 @@
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
       
       <link rel="shortcut icon" href="../../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../../../assets/stylesheets/main.6e35a1a6.min.css">
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.d2af3d17.min.css">
       
-        <link rel="stylesheet" href="../../../assets/stylesheets/palette.a46bcfb3.min.css">
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.89d31e3b.min.css">
       
       
         
@@ -61,6 +61,7 @@
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="indigo">
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -995,7 +996,6 @@ whitepaper and is widely used in Monero literature.</p>
 <div class="codehilite"><pre><span></span><code>−x^2 + y^2 = 1 − (121665/121666) * x^2 * y^2
 </code></pre></div>
 
-
 <p>Note:</p>
 <ul>
 <li>curve is in two dimensions (nothing fancy, like all the curves is high school)</li>
@@ -1013,7 +1013,6 @@ That's because the specific x can be calculated from the curve equation.</p>
 5866666666666666666666666666666666666666666666666666666666666666
 </code></pre></div>
 
-
 <h3 id="prime-order-of-the-base-point-l">Prime order of the base point: <code>l</code><a class="headerlink" href="#prime-order-of-the-base-point-l" title="Permanent link">&para;</a></h3>
 <p>In layment terms, the "canvas" where the curve is drawn is assumed
 to have a finite "resolution", so point coordinates must "wrap around"
@@ -1023,14 +1022,12 @@ In other words, the <code>l</code> defines the maximum scalar we can use.</p>
 # =&gt; 7237005577332262213973186563042994240857116359379907606001950938285454250989
 </code></pre></div>
 
-
 <p>The <code>l</code> is a prime number specified by the curve authors.</p>
 <p>In practice this is the private key's strength.</p>
 <h3 id="total-number-of-points-on-the-curve">Total number of points on the curve<a class="headerlink" href="#total-number-of-points-on-the-curve" title="Permanent link">&para;</a></h3>
 <p>The total number of points on the curve is also a prime number:</p>
 <div class="codehilite"><pre><span></span><code>q = 2^255 - 19
 </code></pre></div>
-
 
 <p>In practice not all points are "useful" and so the private key strength is limited to <code>l</code> describe above.</p>
 <h2 id="implementation">Implementation<a class="headerlink" href="#implementation" title="Permanent link">&para;</a></h2>
@@ -1113,15 +1110,15 @@ In other words, the <code>l</code> defines the maximum scalar we can use.</p>
       
     </div>
     
-      <script src="../../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../../assets/javascripts/bundle.a45f732b.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../../assets/javascripts/vendor.877163d5.min.js"></script>
+      <script src="../../../assets/javascripts/bundle.1688372e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../../..",
           features: [],
           search: Object.assign({
-            worker: "../../../assets/javascripts/worker/search.c03f0417.min.js"
+            worker: "../../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>

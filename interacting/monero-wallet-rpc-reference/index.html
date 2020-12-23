@@ -17,7 +17,7 @@
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.2.3">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
     
     
       
@@ -25,9 +25,9 @@
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.6e35a1a6.min.css">
+      <link rel="stylesheet" href="../../assets/stylesheets/main.d2af3d17.min.css">
       
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.a46bcfb3.min.css">
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.89d31e3b.min.css">
       
       
         
@@ -61,6 +61,7 @@
     
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="indigo">
   
+    
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -1979,7 +1980,6 @@ curl \
     -H &#39;Content-Type: application/json&#39;
 </code></pre></div>
 
-
 <p>If the monero-wallet-rpc was executed with the  <code>--rpc-login</code>  argument as  <code>username:password</code>, then follow this example:</p>
 <div class="codehilite"><pre><span></span><code>IP=127.0.0.1
 PORT=18082
@@ -1991,7 +1991,6 @@ curl \
     -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;&#39;$METHOD&#39;&quot;,&quot;params&quot;:&#39;&quot;$PARAMS&quot;&#39;}&#39; \
     -H &#39;Content-Type: application/json&#39;
 </code></pre></div>
-
 
 <p>Note: "atomic units" refer to the smallest fraction of 1 XMR according to the monerod implementation.  <strong>1 XMR = 1e12  atomic units.</strong></p>
 <h3 id="index-of-json-rpc-methods">Index of JSON RPC Methods:<a class="headerlink" href="#index-of-json-rpc-methods" title="Permanent link">&para;</a></h3>
@@ -2123,7 +2122,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_address"><strong>get_address</strong><a class="headerlink" href="#get_address" title="Permanent link">&para;</a></h3>
 <p>Return the wallet's addresses for an account. Optionally filter for specific set of subaddresses.</p>
@@ -2171,7 +2169,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_address_index"><strong>get_address_index</strong><a class="headerlink" href="#get_address_index" title="Permanent link">&para;</a></h3>
 <p>Get account and address indexes from a specific (sub)address</p>
@@ -2202,7 +2199,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="create_address"><strong>create_address</strong><a class="headerlink" href="#create_address" title="Permanent link">&para;</a></h3>
 <p>Create a new address for an account. Optionally, label the new address.</p>
@@ -2229,7 +2225,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="label_address"><strong>label_address</strong><a class="headerlink" href="#label_address" title="Permanent link">&para;</a></h3>
 <p>Label an address.</p>
@@ -2253,7 +2248,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_accounts"><strong>get_accounts</strong><a class="headerlink" href="#get_accounts" title="Permanent link">&para;</a></h3>
@@ -2304,7 +2298,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="create_account"><strong>create_account</strong><a class="headerlink" href="#create_account" title="Permanent link">&para;</a></h3>
 <p>Create a new account with an optional label.</p>
@@ -2330,7 +2323,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="label_account"><strong>label_account</strong><a class="headerlink" href="#label_account" title="Permanent link">&para;</a></h3>
 <p>Label an account.</p>
@@ -2355,7 +2347,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_account_tags"><strong>get_account_tags</strong><a class="headerlink" href="#get_account_tags" title="Permanent link">&para;</a></h3>
@@ -2386,7 +2377,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="tag_accounts"><strong>tag_accounts</strong><a class="headerlink" href="#tag_accounts" title="Permanent link">&para;</a></h3>
 <p>Apply a filtering tag to a list of accounts.</p>
@@ -2407,7 +2397,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="untag_accounts"><strong>untag_accounts</strong><a class="headerlink" href="#untag_accounts" title="Permanent link">&para;</a></h3>
 <p>Remove filtering tag from a list of accounts.</p>
@@ -2426,7 +2415,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="set_account_tag_description"><strong>set_account_tag_description</strong><a class="headerlink" href="#set_account_tag_description" title="Permanent link">&para;</a></h3>
@@ -2448,7 +2436,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_height"><strong>get_height</strong><a class="headerlink" href="#get_height" title="Permanent link">&para;</a></h3>
 <p>Returns the wallet's current block height.</p>
@@ -2468,7 +2455,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="transfer"><strong>transfer</strong><a class="headerlink" href="#transfer" title="Permanent link">&para;</a></h3>
@@ -2522,7 +2508,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="transfer_split"><strong>transfer_split</strong><a class="headerlink" href="#transfer_split" title="Permanent link">&para;</a></h3>
 <p>Same as transfer, but can split into more than one tx if necessary.</p>
@@ -2573,7 +2558,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="sign_transfer"><strong>sign_transfer</strong><a class="headerlink" href="#sign_transfer" title="Permanent link">&para;</a></h3>
 <p>Sign a transaction created on a read-only wallet (in cold-signing process)</p>
@@ -2608,7 +2592,6 @@ curl \
 }
 </code></pre></div>
 
-
 <p>Sign tx using the previously generated unsigned_txset</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;sign_transfer&quot;,&quot;params&quot;:{&quot;unsigned_txset&quot;:...long_hex...&quot;}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -2620,7 +2603,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="submit_transfer"><strong>submit_transfer</strong><a class="headerlink" href="#submit_transfer" title="Permanent link">&para;</a></h3>
@@ -2644,7 +2626,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="sweep_dust"><strong>sweep_dust</strong><a class="headerlink" href="#sweep_dust" title="Permanent link">&para;</a></h3>
@@ -2679,7 +2660,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="sweep_all"><strong>sweep_all</strong><a class="headerlink" href="#sweep_all" title="Permanent link">&para;</a></h3>
@@ -2727,7 +2707,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="sweep_single"><strong>sweep_single</strong><a class="headerlink" href="#sweep_single" title="Permanent link">&para;</a></h3>
@@ -2779,7 +2758,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="relay_tx"><strong>relay_tx</strong><a class="headerlink" href="#relay_tx" title="Permanent link">&para;</a></h3>
 <p>Relay a transaction previously created with  <code>"do_not_relay":true</code>.</p>
@@ -2803,7 +2781,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="store"><strong>store</strong><a class="headerlink" href="#store" title="Permanent link">&para;</a></h3>
 <p>Save the wallet file.</p>
@@ -2819,7 +2796,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_payments"><strong>get_payments</strong><a class="headerlink" href="#get_payments" title="Permanent link">&para;</a></h3>
@@ -2868,7 +2844,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_bulk_payments"><strong>get_bulk_payments</strong><a class="headerlink" href="#get_bulk_payments" title="Permanent link">&para;</a></h3>
 <p>Get a list of incoming payments using a given payment id, or a list of payments ids, from a given height. This method is the preferred method over  <code>get_payments</code>because it has the same functionality but is more extendable. Either is fine for looking up transactions by a single payment ID.</p>
@@ -2916,7 +2891,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="incoming_transfers"><strong>incoming_transfers</strong><a class="headerlink" href="#incoming_transfers" title="Permanent link">&para;</a></h3>
@@ -2976,7 +2950,6 @@ curl \
 }
 </code></pre></div>
 
-
 <p>Example, get available transfers:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;incoming_transfers&quot;,&quot;params&quot;:{&quot;transfer_type&quot;:&quot;available&quot;,&quot;account_index&quot;:0,&quot;subaddr_indices&quot;:[3],&quot;verbose&quot;:true}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -3004,7 +2977,6 @@ curl \
 }
 </code></pre></div>
 
-
 <p>Example, get unavailable transfers:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;incoming_transfers&quot;,&quot;params&quot;:{&quot;transfer_type&quot;:&quot;unavailable&quot;,&quot;account_index&quot;:0,&quot;subaddr_indices&quot;:[3],&quot;verbose&quot;:true}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -3023,7 +2995,6 @@ curl \
 }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="query_key"><strong>query_key</strong><a class="headerlink" href="#query_key" title="Permanent link">&para;</a></h3>
@@ -3048,7 +3019,6 @@ curl \
 }
 </code></pre></div>
 
-
 <p>Example (Query mnemonic key):</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;query_key&quot;,&quot;params&quot;:{&quot;key_type&quot;:&quot;mnemonic&quot;}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -3059,7 +3029,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="make_integrated_address"><strong>make_integrated_address</strong><a class="headerlink" href="#make_integrated_address" title="Permanent link">&para;</a></h3>
@@ -3086,7 +3055,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="split_integrated_address"><strong>split_integrated_address</strong><a class="headerlink" href="#split_integrated_address" title="Permanent link">&para;</a></h3>
@@ -3115,7 +3083,6 @@ curl \
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="stop_wallet"><strong>stop_wallet</strong><a class="headerlink" href="#stop_wallet" title="Permanent link">&para;</a></h3>
 <p>Stops the wallet, storing the current state.</p>
@@ -3131,7 +3098,6 @@ curl \
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="rescan_blockchain"><strong>rescan_blockchain</strong><a class="headerlink" href="#rescan_blockchain" title="Permanent link">&para;</a></h3>
@@ -3149,7 +3115,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="set_tx_notes"><strong>set_tx_notes</strong><a class="headerlink" href="#set_tx_notes" title="Permanent link">&para;</a></h3>
@@ -3170,7 +3135,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_tx_notes"><strong>get_tx_notes</strong><a class="headerlink" href="#get_tx_notes" title="Permanent link">&para;</a></h3>
@@ -3195,7 +3159,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="set_attribute"><strong>set_attribute</strong><a class="headerlink" href="#set_attribute" title="Permanent link">&para;</a></h3>
 <p>Set arbitrary attribute.</p>
@@ -3215,7 +3178,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_attribute"><strong>get_attribute</strong><a class="headerlink" href="#get_attribute" title="Permanent link">&para;</a></h3>
@@ -3240,7 +3202,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_tx_key"><strong>get_tx_key</strong><a class="headerlink" href="#get_tx_key" title="Permanent link">&para;</a></h3>
 <p>Get transaction secret key from transaction id.</p>
@@ -3263,7 +3224,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="check_tx_key"><strong>check_tx_key</strong><a class="headerlink" href="#check_tx_key" title="Permanent link">&para;</a></h3>
@@ -3294,7 +3254,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_tx_proof"><strong>get_tx_proof</strong><a class="headerlink" href="#get_tx_proof" title="Permanent link">&para;</a></h3>
 <p>Get transaction signature to prove it.</p>
@@ -3319,7 +3278,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="check_tx_proof"><strong>check_tx_proof</strong><a class="headerlink" href="#check_tx_proof" title="Permanent link">&para;</a></h3>
@@ -3353,7 +3311,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <p>In the example below, the wrong message is used, avoiding the transaction to be proved:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;check_tx_proof&quot;,&quot;params&quot;:{&quot;txid&quot;:&quot;19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be&quot;,&quot;address&quot;:&quot;7BnERTpvL5MbCLtj5n9No7J5oE5hHiB3tVCK5cjSvCsYWD2WRJLFuWeKTLiXo5QJqt2ZwUaLy2Vh1Ad51K7FNgqcHgjW85o&quot;,&quot;message&quot;:&quot;wrong message&quot;,&quot;signature&quot;:&quot;InProofV13vqBCT6dpSAXkypZmSEMPGVnNRFDX2vscUYeVS4WnSVnV5BwLs31T9q6Etfj9Wts6tAxSAS4gkMeSYzzLS7Gt4vvCSQRh9niGJMUDJsB5hTzb2XJiCkUzWkkcjLFBBRVD5QZ&quot;}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -3367,7 +3324,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_spend_proof"><strong>get_spend_proof</strong><a class="headerlink" href="#get_spend_proof" title="Permanent link">&para;</a></h3>
@@ -3392,7 +3348,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="check_spend_proof"><strong>check_spend_proof</strong><a class="headerlink" href="#check_spend_proof" title="Permanent link">&para;</a></h3>
@@ -3419,7 +3374,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <p>In the example below, the wrong message is used, avoiding the spend to be proved:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;check_spend_proof&quot;,&quot;params&quot;:{&quot;txid&quot;:&quot;19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be&quot;,&quot;message&quot;:&quot;wrong message&quot;,&quot;signature&quot;:&quot;SpendProofV1aSh8Todhk54736iXgV6vJAFP7egxByuMWZeyNDaN2JY737S95X5zz5mNMQSuCNSLjjhi5HJCsndpNWSNVsuThxwv285qy1KkUrLFRkxMSCjfL6bbycYN33ScZ5UB4Fzseceo1ndpL393T1q638VmcU3a56dhNHF1RPZFiGPS61FA78nXFSqE9uoKCCoHkEz83M1dQVhxZV5CEPF2P6VioGTKgprLCH9vvj9k1ivd4SX19L2VSMc3zD1u3mkR24ioETvxBoLeBSpxMoikyZ6inhuPm8yYo9YWyFtQK4XYfAV9mJ9knz5fUPXR8vvh7KJCAg4dqeJXTVb4mbMzYtsSZXHd6ouWoyCd6qMALdW8pKhgMCHcVYMWp9X9WHZuCo9rsRjRpg15sJUw7oJg1JoGiVgj8P4JeGDjnZHnmLVa5bpJhVCbMhyM7JLXNQJzFWTGC27TQBbthxCfQaKdusYnvZnKPDJWSeceYEFzepUnsWhQtyhbb73FzqgWC4eKEFKAZJqT2LuuSoxmihJ9acnFK7Ze23KTVYgDyMKY61VXADxmSrBvwUtxCaW4nQtnbMxiPMNnDMzeixqsFMBtN72j5UqhiLRY99k6SE7Qf5f29haNSBNSXCFFHChPKNTwJrehkofBdKUhh2VGPqZDNoefWUwfudeu83t85bmjv8Q3LrQSkFgFjRT5tLo8TMawNXoZCrQpyZrEvnodMDDUUNf3NL7rxyv3gM1KrTWjYaWXFU2RAsFee2Q2MTwUW7hR25cJvSFuB1BX2bfkoCbiMk923tHZGU2g7rSKF1GDDkXAc1EvFFD4iGbh1Q5t6hPRhBV8PEncdcCWGq5uAL5D4Bjr6VXG8uNeCy5oYWNgbZ5JRSfm7QEhPv8Fy9AKMgmCxDGMF9dVEaU6tw2BAnJavQdfrxChbDBeQXzCbCfep6oei6n2LZdE5Q84wp7eoQFE5Cwuo23tHkbJCaw2njFi3WGBbA7uGZaGHJPyB2rofTWBiSUXZnP2hiE9bjJghAcDm1M4LVLfWvhZmFEnyeru3VWMETnetz1BYLUC5MJGFXuhnHwWh7F6r74FDyhdswYop4eWPbyrXMXmUQEccTGd2NaT8g2VHADZ76gMC6BjWESvcnz2D4n8XwdmM7ZQ1jFwhuXrBfrb1dwRasyXxxHMGAC2onatNiExyeQ9G1W5LwqNLAh9hvcaNTGaYKYXoceVzLkgm6e5WMkLsCwuZXvB&quot;}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -3430,7 +3384,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_reserve_proof"><strong>get_reserve_proof</strong><a class="headerlink" href="#get_reserve_proof" title="Permanent link">&para;</a></h3>
@@ -3457,7 +3410,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="check_reserve_proof"><strong>check_reserve_proof</strong><a class="headerlink" href="#check_reserve_proof" title="Permanent link">&para;</a></h3>
@@ -3486,7 +3438,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <p>In the example below, all wallet reserve has been proven:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;check_reserve_proof&quot;,&quot;params&quot;:{&quot;address&quot;:&quot;55LTR8KniP4LQGJSPtbYDacR7dz8RBFnsfAKMaMuwUNYX6aQbBcovzDPyrQF9KXF9tVU6Xk3K8no1BywnJX6GvZX8yJsXvt&quot;,&quot;message&quot;:&quot;I have 10 at least&quot;,&quot;signature&quot;:&quot;...signature...&quot;}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -3500,7 +3451,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <p>In the example below, the wrong message is used, avoiding the reserve to be proved:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://127.0.0.1:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;check_spend_proof&quot;,&quot;params&quot;:{&quot;txid&quot;:&quot;19d5089f9469db3d90aca9024dfcb17ce94b948300101c8345a5e9f7257353be&quot;,&quot;message&quot;:&quot;wrong message&quot;,&quot;signature&quot;:&quot;SpendProofV1aSh8Todhk54736iXgV6vJAFP7egxByuMWZeyNDaN2JY737S95X5zz5mNMQSuCNSLjjhi5HJCsndpNWSNVsuThxwv285qy1KkUrLFRkxMSCjfL6bbycYN33ScZ5UB4Fzseceo1ndpL393T1q638VmcU3a56dhNHF1RPZFiGPS61FA78nXFSqE9uoKCCoHkEz83M1dQVhxZV5CEPF2P6VioGTKgprLCH9vvj9k1ivd4SX19L2VSMc3zD1u3mkR24ioETvxBoLeBSpxMoikyZ6inhuPm8yYo9YWyFtQK4XYfAV9mJ9knz5fUPXR8vvh7KJCAg4dqeJXTVb4mbMzYtsSZXHd6ouWoyCd6qMALdW8pKhgMCHcVYMWp9X9WHZuCo9rsRjRpg15sJUw7oJg1JoGiVgj8P4JeGDjnZHnmLVa5bpJhVCbMhyM7JLXNQJzFWTGC27TQBbthxCfQaKdusYnvZnKPDJWSeceYEFzepUnsWhQtyhbb73FzqgWC4eKEFKAZJqT2LuuSoxmihJ9acnFK7Ze23KTVYgDyMKY61VXADxmSrBvwUtxCaW4nQtnbMxiPMNnDMzeixqsFMBtN72j5UqhiLRY99k6SE7Qf5f29haNSBNSXCFFHChPKNTwJrehkofBdKUhh2VGPqZDNoefWUwfudeu83t85bmjv8Q3LrQSkFgFjRT5tLo8TMawNXoZCrQpyZrEvnodMDDUUNf3NL7rxyv3gM1KrTWjYaWXFU2RAsFee2Q2MTwUW7hR25cJvSFuB1BX2bfkoCbiMk923tHZGU2g7rSKF1GDDkXAc1EvFFD4iGbh1Q5t6hPRhBV8PEncdcCWGq5uAL5D4Bjr6VXG8uNeCy5oYWNgbZ5JRSfm7QEhPv8Fy9AKMgmCxDGMF9dVEaU6tw2BAnJavQdfrxChbDBeQXzCbCfep6oei6n2LZdE5Q84wp7eoQFE5Cwuo23tHkbJCaw2njFi3WGBbA7uGZaGHJPyB2rofTWBiSUXZnP2hiE9bjJghAcDm1M4LVLfWvhZmFEnyeru3VWMETnetz1BYLUC5MJGFXuhnHwWh7F6r74FDyhdswYop4eWPbyrXMXmUQEccTGd2NaT8g2VHADZ76gMC6BjWESvcnz2D4n8XwdmM7ZQ1jFwhuXrBfrb1dwRasyXxxHMGAC2onatNiExyeQ9G1W5LwqNLAh9hvcaNTGaYKYXoceVzLkgm6e5WMkLsCwuZXvB&quot;}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -3511,7 +3461,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_transfers"><strong>get_transfers</strong><a class="headerlink" href="#get_transfers" title="Permanent link">&para;</a></h3>
@@ -3587,7 +3536,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_transfer_by_txid"><strong>get_transfer_by_txid</strong><a class="headerlink" href="#get_transfer_by_txid" title="Permanent link">&para;</a></h3>
 <p>Show information about a transfer to/from this address.</p>
@@ -3662,7 +3610,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="sign"><strong>sign</strong><a class="headerlink" href="#sign" title="Permanent link">&para;</a></h3>
 <p>Sign a string.</p>
@@ -3685,7 +3632,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="verify"><strong>verify</strong><a class="headerlink" href="#verify" title="Permanent link">&para;</a></h3>
@@ -3712,7 +3658,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="export_outputs"><strong>export_outputs</strong><a class="headerlink" href="#export_outputs" title="Permanent link">&para;</a></h3>
 <p>Export all outputs in hex format.</p>
@@ -3732,7 +3677,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="import_outputs"><strong>import_outputs</strong><a class="headerlink" href="#import_outputs" title="Permanent link">&para;</a></h3>
@@ -3756,7 +3700,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="export_key_images"><strong>export_key_images</strong><a class="headerlink" href="#export_key_images" title="Permanent link">&para;</a></h3>
@@ -3787,7 +3730,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="import_key_images"><strong>import_key_images</strong><a class="headerlink" href="#import_key_images" title="Permanent link">&para;</a></h3>
@@ -3820,7 +3762,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="make_uri"><strong>make_uri</strong><a class="headerlink" href="#make_uri" title="Permanent link">&para;</a></h3>
 <p>Create a payment URI using the official URI spec.</p>
@@ -3847,7 +3788,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="parse_uri"><strong>parse_uri</strong><a class="headerlink" href="#parse_uri" title="Permanent link">&para;</a></h3>
@@ -3884,7 +3824,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_address_book"><strong>get_address_book</strong><a class="headerlink" href="#get_address_book" title="Permanent link">&para;</a></h3>
@@ -3925,7 +3864,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="add_address_book"><strong>add_address_book</strong><a class="headerlink" href="#add_address_book" title="Permanent link">&para;</a></h3>
 <p>Add an entry to the address book.</p>
@@ -3951,7 +3889,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="delete_address_book"><strong>delete_address_book</strong><a class="headerlink" href="#delete_address_book" title="Permanent link">&para;</a></h3>
 <p>Delete an entry from the address book.</p>
@@ -3970,7 +3907,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="refresh"><strong>refresh</strong><a class="headerlink" href="#refresh" title="Permanent link">&para;</a></h3>
@@ -3997,7 +3933,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="rescan_spent"><strong>rescan_spent</strong><a class="headerlink" href="#rescan_spent" title="Permanent link">&para;</a></h3>
 <p>Rescan the blockchain for spent outputs.</p>
@@ -4014,7 +3949,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="start_mining"><strong>start_mining</strong><a class="headerlink" href="#start_mining" title="Permanent link">&para;</a></h3>
@@ -4037,7 +3971,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="stop_mining"><strong>stop_mining</strong><a class="headerlink" href="#stop_mining" title="Permanent link">&para;</a></h3>
 <p>Stop mining in the Monero daemon.</p>
@@ -4053,7 +3986,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="get_languages"><strong>get_languages</strong><a class="headerlink" href="#get_languages" title="Permanent link">&para;</a></h3>
@@ -4074,7 +4006,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="create_wallet"><strong>create_wallet</strong><a class="headerlink" href="#create_wallet" title="Permanent link">&para;</a></h3>
@@ -4097,7 +4028,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="open_wallet"><strong>open_wallet</strong><a class="headerlink" href="#open_wallet" title="Permanent link">&para;</a></h3>
 <p>Open a wallet. You need to have set the argument "–wallet-dir" when launching monero-wallet-rpc to make this work.</p>
@@ -4118,7 +4048,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="close_wallet"><strong>close_wallet</strong><a class="headerlink" href="#close_wallet" title="Permanent link">&para;</a></h3>
 <p>Close the currently opened wallet, after trying to save it.</p>
@@ -4134,7 +4063,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="change_wallet_password"><strong>change_wallet_password</strong><a class="headerlink" href="#change_wallet_password" title="Permanent link">&para;</a></h3>
@@ -4155,7 +4083,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="is_multisig"><strong>is_multisig</strong><a class="headerlink" href="#is_multisig" title="Permanent link">&para;</a></h3>
@@ -4183,7 +4110,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <p>Example for a multisig wallet:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://localhost:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;is_multisig&quot;}&#39; -H &#39;Content-Type: application/json&#39;                  {
   &quot;id&quot;: &quot;0&quot;,
@@ -4196,7 +4122,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="prepare_multisig"><strong>prepare_multisig</strong><a class="headerlink" href="#prepare_multisig" title="Permanent link">&para;</a></h3>
@@ -4217,7 +4142,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="make_multisig"><strong>make_multisig</strong><a class="headerlink" href="#make_multisig" title="Permanent link">&para;</a></h3>
@@ -4246,7 +4170,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <p>Example for 2/3 Multisig Wallet:</p>
 <div class="codehilite"><pre><span></span><code>$ curl -X POST http://localhost:18082/json_rpc -d &#39;{&quot;jsonrpc&quot;:&quot;2.0&quot;,&quot;id&quot;:&quot;0&quot;,&quot;method&quot;:&quot;make_multisig&quot;,&quot;params&quot;:{&quot;multisig_info&quot;:[&quot;MultisigV1MTVm4DZAdJw1PyVutpSy8Q4WisZBCFRAaZY7hhQnMwr5AZ4swzThyaSiVVQM5FHj1JQi3zPKhQ4k81BZkPSEaFjwRJtbfqfJcVvCqRnmBVcWVxhnihX5s8fZWBCjKrzT3CS95spG4dzNzJSUcjheAkLzCpVmSzGtgwMhAS3Vuz9Pas24&quot;,&quot;MultisigV1TEx58ycKCd6ADCfxF8hALpcdSRAkhZTi1bu4Rs6FdRC98EdB1LY7TAkMxasM55khFgcxrSXivaSr5FCMyJGHmojm1eE4HpGWPeZKv6cgCTThRzC4u6bkkSoFQdbzWN92yn1XEjuP2XQrGHk81mG2LMeyB51MWKJAVF99Pg9mX2BpmYFj&quot;],&quot;threshold&quot;:2}}&#39; -H &#39;Content-Type: application/json&#39;
 {
@@ -4258,7 +4181,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="export_multisig_info"><strong>export_multisig_info</strong><a class="headerlink" href="#export_multisig_info" title="Permanent link">&para;</a></h3>
@@ -4279,7 +4201,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="import_multisig_info"><strong>import_multisig_info</strong><a class="headerlink" href="#import_multisig_info" title="Permanent link">&para;</a></h3>
@@ -4304,7 +4225,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="finalize_multisig"><strong>finalize_multisig</strong><a class="headerlink" href="#finalize_multisig" title="Permanent link">&para;</a></h3>
 <p>Turn this wallet into a multisig wallet, extra step for N-1/N wallets.</p>
@@ -4328,7 +4248,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <hr />
 <h3 id="sign_multisig"><strong>sign_multisig</strong><a class="headerlink" href="#sign_multisig" title="Permanent link">&para;</a></h3>
@@ -4355,7 +4274,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="submit_multisig"><strong>submit_multisig</strong><a class="headerlink" href="#submit_multisig" title="Permanent link">&para;</a></h3>
 <p>Submit a signed multisig transaction.</p>
@@ -4379,7 +4297,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
 }
 </code></pre></div>
 
-
 <hr />
 <h3 id="get_version"><strong>get_version</strong><a class="headerlink" href="#get_version" title="Permanent link">&para;</a></h3>
 <p>Get RPC version Major &amp; Minor integer-format, where Major is the first 16 bits and Minor the last 16 bits.</p>
@@ -4399,7 +4316,6 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
   }
 }
 </code></pre></div>
-
 
 <h2 id="sources">Sources:<a class="headerlink" href="#sources" title="Permanent link">&para;</a></h2>
 <p>Reworked from <a href="https://ww.getmonero.org/resources/developer-guides/wallet-rpc.html">GetMonero.org</a></p>
@@ -4469,15 +4385,15 @@ This includes destination addresses, tx secret keys, tx notes, etc.</p>
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.d710d30a.min.js"></script>
-      <script src="../../assets/javascripts/bundle.a45f732b.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.877163d5.min.js"></script>
+      <script src="../../assets/javascripts/bundle.1688372e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.c03f0417.min.js"
+            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
