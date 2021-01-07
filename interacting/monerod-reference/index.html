@@ -1340,11 +1340,11 @@ tail -f ~/.bitmonero/bitmonero.log           # watch the logs
 </tr>
 <tr>
 <td><code>--version</code></td>
-<td>Show <code>monerod</code> version to stdout. Example: <br /><code>Monero 'Boron Butterfly' (v0.14.0.0-release)</code></td>
+<td>Show <code>monerod</code> version to stdout. Example output: <br /><code>Monero 'Oxygen Orion' (v0.17.1.8-release)</code></td>
 </tr>
 <tr>
 <td><code>--os-version</code></td>
-<td>Show build timestamp and target operating system. Example output:<br /><code>OS: Linux #1 SMP PREEMPT Wed, 27 May 2020 23:42:26 +0000 5.6.15-arch1-1</code>.</td>
+<td>Show build timestamp and target operating system. Example output:<br /><code>OS: Linux #65-Ubuntu SMP Thu Dec 10 12:01:51 UTC 2020 5.4.0-59-generic</code>.</td>
 </tr>
 <tr>
 <td><code>--check-updates</code></td>
@@ -1469,7 +1469,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tbody>
 <tr>
 <td><code>--p2p-bind-ip</code></td>
-<td>IPv4 network interface to bind to for p2p network protocol. Default value <code>0.0.0.0</code> binds to all network interfaces. This is typically what you want. <br /><br />You must change this if you want to constrain binding, for example to configure connection through Tor via torsocks: <br /><code>DNS_PUBLIC=tcp://1.1.1.1 TORSOCKS_ALLOW_INBOUND=1 torsocks ./monerod --p2p-bind-ip 127.0.0.1 --no-igd --hide-my-port</code></td>
+<td>IPv4 network interface to bind to for p2p network protocol. Default value <code>0.0.0.0</code> binds to all network interfaces. This is typically what you want. <br /><br />You must change this if you want to constrain binding, for example to force working through Tor via torsocks: <br /><code>DNS_PUBLIC=tcp://1.1.1.1 TORSOCKS_ALLOW_INBOUND=1 torsocks ./monerod --p2p-bind-ip 127.0.0.1  --no-igd  --hide-my-port</code></td>
 </tr>
 <tr>
 <td><code>--p2p-bind-port</code></td>
@@ -1505,7 +1505,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 </tr>
 <tr>
 <td><code>--add-peer</code></td>
-<td>Manually add node to local peer list.</td>
+<td>Manually add node to local peer list, <code>host:port</code>. Syntax supports IP addresses, domain names, onion and i2p hosts.</td>
 </tr>
 <tr>
 <td><code>--add-priority-node</code></td>
@@ -1845,6 +1845,14 @@ This is for node-to-node communication. The following options do <strong>not</st
 </thead>
 <tbody>
 <tr>
+<td><code>--ban-list</code></td>
+<td>Specify ban list file, one IP address per line. This was introduced as an emergency measure to deal with large DDoS attacks on Monero p2p network in Dec 2020 / Jan 2021. Example: <br /><code>./monerod --ban-list=block_tor.txt</code>. Here is the popular <a href="https://gui.xmr.pm/files/block_tor.txt">block_tor.txt</a> file.<br /><br />It is <strong>not recommended</strong> to statically ban any IP addresses unless you absolutely need to. Banning IPs often excludes the most vulnerable users who are forced to operate entirely behind Tor or other anonymity networks.</td>
+</tr>
+<tr>
+<td><code>--enable-dns-blocklist</code></td>
+<td>Similar to <code>--ban-list</code> but instead of a static file uses dynamic IP blocklist available as DNS TXT entries. The DNS blocklist is centrally managed by Monero contributors. It is <strong>not recommended</strong> unless in emergency situations.</td>
+</tr>
+<tr>
 <td><code>--fluffy-blocks</code></td>
 <td>Relay compact blocks. Default. Compact block is just a header and a list of transaction IDs.</td>
 </tr>
@@ -1863,6 +1871,10 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tr>
 <td><code>--zmq-rpc-bind-port</code></td>
 <td>Port for ZMQ RPC server to listen on. By default <code>18082</code> for mainnet, <code>38082</code> for stagenet, and <code>28082</code> for testnet.</td>
+</tr>
+<tr>
+<td><code>--zmq-pub</code></td>
+<td>Address for ZMQ pub - <code>tcp://ip:port</code> or <code>ipc://path</code></td>
 </tr>
 <tr>
 <td><code>--db-type</code></td>
