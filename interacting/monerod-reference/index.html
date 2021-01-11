@@ -980,6 +980,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../infrastructure/tor-onion-p2p-seed-nodes/" title="Tor onion seed nodes" class="md-nav__link">
+      Tor onion seed nodes
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../infrastructure/monero-pulse/" title="MoneroPulse" class="md-nav__link">
       MoneroPulse
     </a>
@@ -1557,7 +1569,7 @@ This is for node-to-node communication. The following options do <strong>not</st
 <tbody>
 <tr>
 <td><code>--tx-proxy</code></td>
-<td>Send out your local transactions through SOCKS5 proxy (Tor or I2P). Format:<br /><code>&lt;network-type&gt;,&lt;socks-ip:port&gt;[,max_connections][,disable_noise]</code> <br /><br />Example:<br /><code>./monerod --tx-proxy "tor,127.0.0.1:9050,10,disable_noise"</code><br /><br />This was introduced to make publishing transactions over Tor easier (no need for torsocks) while allowing clearnet for blocks at the same time (while torsocks affected everything). <br /><br />Note that forwarded transactions (those not originating from connected wallet) will still be relayed over clearnet.<br /><br />Requires multiple <code>--add-peer</code>. See <a href="https://github.com/monero-project/monero/pull/6021">commit</a> and <a href="https://github.com/monero-project/monero/blob/master/ANONYMITY_NETWORKS.md#p2p-commands">guide</a>.</td>
+<td>Send out your local transactions through SOCKS5 proxy (Tor or I2P). Format:<br /><code>&lt;network-type&gt;,&lt;socks-ip:port&gt;[,max_connections][,disable_noise]</code> <br /><br />Example:<br /><code>./monerod --tx-proxy "tx-proxy=tor,127.0.0.1:9050,16"</code><br /><br />This was introduced to make publishing transactions over Tor easier (no need for torsocks) while allowing clearnet for blocks at the same time (while torsocks affected everything).<br /><br />Adding <code>,disable_noise</code> disables Dandelion++ (will speed up tx broadcast but is otherwise not recommended). <br /><br />Note that forwarded transactions (those not originating from connected wallet) will still be relayed over clearnet.<br /><br /><strong>Requires multiple <code>--add-peer</code></strong> to manually add onion-enabled p2p seed nodes - see <a href="/infrastructure/tor-onion-p2p-seed-nodes">Tor onion seed nodes for Monero P2P network</a>. See this <a href="https://github.com/monero-project/monero/blob/master/ANONYMITY_NETWORKS.md#p2p-commands">guide</a> and <a href="https://github.com/monero-project/monero/pull/6021">commit</a>.</td>
 </tr>
 <tr>
 <td><code>--anonymous-inbound</code></td>
