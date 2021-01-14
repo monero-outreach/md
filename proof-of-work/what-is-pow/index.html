@@ -1,6 +1,4 @@
 
-
-
 <!doctype html>
 <html lang="en" class="no-js">
   <head>
@@ -11,41 +9,42 @@
         <meta name="description" content="Unofficial Monero Documentation">
       
       
-        <link rel="canonical" href="https://monerodocs.org/proof-of-work/what-is-pow/">
-      
       
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
       
+      
+        <link rel="canonical" href="https://monerodocs.org/proof-of-work/what-is-pow/">
+      
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-5.5.0">
+      <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
-        <title>Proof of Work | Monero Documentation</title>
+        <title>Proof of Work - Monero Documentation</title>
       
     
     
-      <link rel="stylesheet" href="../../assets/stylesheets/main.d2af3d17.min.css">
-      
-        <link rel="stylesheet" href="../../assets/stylesheets/palette.89d31e3b.min.css">
-      
+      <link rel="stylesheet" href="../../assets/stylesheets/main.15aa0b43.min.css">
       
         
+        <link rel="stylesheet" href="../../assets/stylesheets/palette.75751829.min.css">
         
-        <meta name="theme-color" content="">
+          
+          
+          <meta name="theme-color" content="#ffffff">
+        
       
     
     
     
       
-        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono",SFMono-Regular,Consolas,Menlo,monospace}</style>
       
     
     
-    
-      <link rel="stylesheet" href="../../extra.css">
     
       <link rel="stylesheet" href="../../overrides.css">
     
@@ -59,7 +58,10 @@
     
     
     
+    
+    
     <body dir="ltr" data-md-color-scheme="" data-md-color-primary="white" data-md-color-accent="indigo">
+      
   
     
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
@@ -77,9 +79,11 @@
       
     </div>
     
-      <header class="md-header" data-md-component="header">
+      
+
+<header class="md-header" data-md-component="header">
   <nav class="md-header-nav md-grid" aria-label="Header">
-    <a href="https://monerodocs.org/" title="Monero Documentation" class="md-header-nav__button md-logo" aria-label="Monero Documentation">
+    <a href="https://monerodocs.org" title="Monero Documentation" class="md-header-nav__button md-logo" aria-label="Monero Documentation">
       
   <img src="../../images/monero.svg" alt="logo">
 
@@ -88,18 +92,20 @@
       <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2z"/></svg>
     </label>
     <div class="md-header-nav__title" data-md-component="header-title">
-      
-        <div class="md-header-nav__ellipsis">
-          <span class="md-header-nav__topic md-ellipsis">
+      <div class="md-header-nav__ellipsis">
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             Monero Documentation
           </span>
-          <span class="md-header-nav__topic md-ellipsis">
+        </div>
+        <div class="md-header-nav__topic">
+          <span class="md-ellipsis">
             
-              Proof of Work | Monero Documentation
+              Proof of Work
             
           </span>
         </div>
-      
+      </div>
     </div>
     
       <label class="md-header-nav__button md-icon" for="__search">
@@ -110,7 +116,7 @@
   <label class="md-search__overlay" for="__search"></label>
   <div class="md-search__inner" role="search">
     <form class="md-search__form" name="search">
-      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active">
+      <input type="text" class="md-search__input" name="query" aria-label="Search" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" data-md-state="active" required>
       <label class="md-search__icon md-icon" for="__search">
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0116 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 019.5 16 6.5 6.5 0 013 9.5 6.5 6.5 0 019.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5z"/></svg>
         <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
@@ -151,8 +157,6 @@
     
     <div class="md-container" data-md-component="container">
       
-        
-      
       
         
       
@@ -160,12 +164,18 @@
         <div class="md-main__inner md-grid">
           
             
-              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    <nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+                    
+
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
   <label class="md-nav__title" for="__drawer">
-    <a href="https://monerodocs.org/" title="Monero Documentation" class="md-nav__button md-logo" aria-label="Monero Documentation">
+    <a href="https://monerodocs.org" title="Monero Documentation" class="md-nav__button md-logo" aria-label="Monero Documentation">
       
   <img src="../../images/monero.svg" alt="logo">
 
@@ -193,8 +203,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../.." title="Home" class="md-nav__link">
+    <a href="../.." class="md-nav__link">
       Home
     </a>
   </li>
@@ -205,21 +216,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-2" type="checkbox" id="nav-2" >
     
     <label class="md-nav__link" for="nav-2">
       Interacting
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Interacting" data-md-level="1">
       <label class="md-nav__title" for="nav-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Interacting
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -230,8 +240,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/download-monero-binaries/" title="Download" class="md-nav__link">
+    <a href="../../interacting/download-monero-binaries/" class="md-nav__link">
       Download
     </a>
   </li>
@@ -242,8 +253,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/verify-monero-binaries/" title="Verify" class="md-nav__link">
+    <a href="../../interacting/verify-monero-binaries/" class="md-nav__link">
       Verify
     </a>
   </li>
@@ -254,8 +266,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/overview/" title="Overview" class="md-nav__link">
+    <a href="../../interacting/overview/" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -266,8 +279,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/monero-config-file/" title="Config file" class="md-nav__link">
+    <a href="../../interacting/monero-config-file/" class="md-nav__link">
       Config file
     </a>
   </li>
@@ -278,8 +292,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/monerod-reference/" title="monerod" class="md-nav__link">
+    <a href="../../interacting/monerod-reference/" class="md-nav__link">
       monerod
     </a>
   </li>
@@ -290,8 +305,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/monero-wallet-cli-reference/" title="monero-wallet-cli" class="md-nav__link">
+    <a href="../../interacting/monero-wallet-cli-reference/" class="md-nav__link">
       monero-wallet-cli
     </a>
   </li>
@@ -302,8 +318,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/monero-wallet-gui-reference/" title="monero-wallet-gui" class="md-nav__link">
+    <a href="../../interacting/monero-wallet-gui-reference/" class="md-nav__link">
       monero-wallet-gui
     </a>
   </li>
@@ -314,8 +331,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/monero-wallet-rpc-reference/" title="monero-wallet-rpc" class="md-nav__link">
+    <a href="../../interacting/monero-wallet-rpc-reference/" class="md-nav__link">
       monero-wallet-rpc
     </a>
   </li>
@@ -326,8 +344,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/monero-blockchain-export-reference/" title="monero-blockchain-export" class="md-nav__link">
+    <a href="../../interacting/monero-blockchain-export-reference/" class="md-nav__link">
       monero-blockchain-export
     </a>
   </li>
@@ -338,8 +357,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../interacting/monero-blockchain-import-reference/" title="monero-blockchain-import" class="md-nav__link">
+    <a href="../../interacting/monero-blockchain-import-reference/" class="md-nav__link">
       monero-blockchain-import
     </a>
   </li>
@@ -355,8 +375,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../../technical-specs/" title="Technical specs" class="md-nav__link">
+    <a href="../../technical-specs/" class="md-nav__link">
       Technical specs
     </a>
   </li>
@@ -367,21 +388,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4" >
     
     <label class="md-nav__link" for="nav-4">
       Cryptography
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Cryptography" data-md-level="1">
       <label class="md-nav__title" for="nav-4">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Cryptography
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -392,8 +412,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/introduction/" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -404,21 +425,20 @@
           
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-4-2" type="checkbox" id="nav-4-2" >
     
     <label class="md-nav__link" for="nav-4-2">
       Asymmetric
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Asymmetric" data-md-level="2">
       <label class="md-nav__title" for="nav-4-2">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Asymmetric
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -429,8 +449,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/asymmetric/introduction/" title="Introduction" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/introduction/" class="md-nav__link">
       Introduction
     </a>
   </li>
@@ -441,8 +462,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/asymmetric/private-key/" title="Private keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/private-key/" class="md-nav__link">
       Private keys
     </a>
   </li>
@@ -453,8 +475,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/asymmetric/public-key/" title="Public keys" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/public-key/" class="md-nav__link">
       Public keys
     </a>
   </li>
@@ -465,8 +488,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/asymmetric/edwards25519/" title="Edwards25519 curve" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/edwards25519/" class="md-nav__link">
       Edwards25519 curve
     </a>
   </li>
@@ -477,8 +501,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/asymmetric/key-image/" title="Key image" class="md-nav__link">
+    <a href="../../cryptography/asymmetric/key-image/" class="md-nav__link">
       Key image
     </a>
   </li>
@@ -494,8 +519,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/base58/" title="Base58" class="md-nav__link">
+    <a href="../../cryptography/base58/" class="md-nav__link">
       Base58
     </a>
   </li>
@@ -506,8 +532,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/prng/" title="PRNG" class="md-nav__link">
+    <a href="../../cryptography/prng/" class="md-nav__link">
       PRNG
     </a>
   </li>
@@ -518,8 +545,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../cryptography/keccak-256/" title="Keccak-256" class="md-nav__link">
+    <a href="../../cryptography/keccak-256/" class="md-nav__link">
       Keccak-256
     </a>
   </li>
@@ -535,21 +563,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5" >
     
     <label class="md-nav__link" for="nav-5">
       Address
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Address" data-md-level="1">
       <label class="md-nav__title" for="nav-5">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Address
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -560,8 +587,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../public-address/standard-address/" title="Standard" class="md-nav__link">
+    <a href="../../public-address/standard-address/" class="md-nav__link">
       Standard
     </a>
   </li>
@@ -572,8 +600,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../public-address/subaddress/" title="Subaddress" class="md-nav__link">
+    <a href="../../public-address/subaddress/" class="md-nav__link">
       Subaddress
     </a>
   </li>
@@ -584,8 +613,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../public-address/integrated-address/" title="Integrated" class="md-nav__link">
+    <a href="../../public-address/integrated-address/" class="md-nav__link">
       Integrated
     </a>
   </li>
@@ -600,24 +630,23 @@
       
       
 
+
   
 
 
+  
   <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
     
       <input class="md-nav__toggle md-toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6" checked>
     
     <label class="md-nav__link" for="nav-6">
       Proof of Work
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Proof of Work" data-md-level="1">
       <label class="md-nav__title" for="nav-6">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Proof of Work
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -626,6 +655,7 @@
           
           
           
+
 
   
 
@@ -639,12 +669,10 @@
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
         What is PoW?
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 9h14V7H3v2m0 4h14v-2H3v2m0 4h14v-2H3v2m16 0h2v-2h-2v2m0-10v2h2V7h-2m0 6h2v-2h-2v2z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
       </label>
     
-    <a href="./" title="What is PoW?" class="md-nav__link md-nav__link--active">
+    <a href="./" class="md-nav__link md-nav__link--active">
       What is PoW?
     </a>
     
@@ -656,9 +684,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -703,8 +729,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../pow-in-cryptocurrencies/" title="PoW in Cryptocurrencies" class="md-nav__link">
+    <a href="../pow-in-cryptocurrencies/" class="md-nav__link">
       PoW in Cryptocurrencies
     </a>
   </li>
@@ -715,8 +742,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../cryptonight/" title="CryptoNight" class="md-nav__link">
+    <a href="../cryptonight/" class="md-nav__link">
       CryptoNight
     </a>
   </li>
@@ -727,8 +755,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../random-x/" title="RandomX" class="md-nav__link">
+    <a href="../random-x/" class="md-nav__link">
       RandomX
     </a>
   </li>
@@ -744,8 +773,9 @@
       
 
 
+
   <li class="md-nav__item">
-    <a href="../../multisignature/" title="Multisignature" class="md-nav__link">
+    <a href="../../multisignature/" class="md-nav__link">
       Multisignature
     </a>
   </li>
@@ -756,21 +786,20 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-8" type="checkbox" id="nav-8" >
     
     <label class="md-nav__link" for="nav-8">
       Infrastructure
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Infrastructure" data-md-level="1">
       <label class="md-nav__title" for="nav-8">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+        <span class="md-nav__icon md-icon"></span>
         Infrastructure
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -781,8 +810,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../infrastructure/networks/" title="Mainnet, stagenet, testnet" class="md-nav__link">
+    <a href="../../infrastructure/networks/" class="md-nav__link">
       Mainnet, stagenet, testnet
     </a>
   </li>
@@ -793,8 +823,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../infrastructure/tor-onion-p2p-seed-nodes/" title="Tor onion seed nodes" class="md-nav__link">
+    <a href="../../infrastructure/tor-onion-p2p-seed-nodes/" class="md-nav__link">
       Tor onion seed nodes
     </a>
   </li>
@@ -805,8 +836,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../infrastructure/monero-pulse/" title="MoneroPulse" class="md-nav__link">
+    <a href="../../infrastructure/monero-pulse/" class="md-nav__link">
       MoneroPulse
     </a>
   </li>
@@ -822,21 +854,62 @@
       
 
 
+
+  
   <li class="md-nav__item md-nav__item--nested">
     
-      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9">
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-9" type="checkbox" id="nav-9" >
     
     <label class="md-nav__link" for="nav-9">
+      Running a Node
+      <span class="md-nav__icon md-icon"></span>
+    </label>
+    <nav class="md-nav" aria-label="Running a Node" data-md-level="1">
+      <label class="md-nav__title" for="nav-9">
+        <span class="md-nav__icon md-icon"></span>
+        Running a Node
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+
+  <li class="md-nav__item">
+    <a href="../../running-node/open-remote-node-tor-onion/" class="md-nav__link">
+      Open Remote Node + Tor Onion
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+
+  
+  <li class="md-nav__item md-nav__item--nested">
+    
+    
+      <input class="md-nav__toggle md-toggle" data-md-toggle="nav-10" type="checkbox" id="nav-10" >
+    
+    <label class="md-nav__link" for="nav-10">
       Accepting Monero
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M8.59 16.58L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.42z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
     </label>
     <nav class="md-nav" aria-label="Accepting Monero" data-md-level="1">
-      <label class="md-nav__title" for="nav-9">
-        <span class="md-nav__icon md-icon">
-          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-        </span>
+      <label class="md-nav__title" for="nav-10">
+        <span class="md-nav__icon md-icon"></span>
         Accepting Monero
       </label>
       <ul class="md-nav__list" data-md-scrollfix>
@@ -847,8 +920,9 @@
           
 
 
+
   <li class="md-nav__item">
-    <a href="../../accepting-monero/overview/" title="Overview" class="md-nav__link">
+    <a href="../../accepting-monero/overview/" class="md-nav__link">
       Overview
     </a>
   </li>
@@ -866,7 +940,8 @@
               </div>
             
             
-              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc" >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     
@@ -877,9 +952,7 @@
   
   
     <label class="md-nav__title" for="__toc">
-      <span class="md-nav__icon md-icon">
-        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
-      </span>
+      <span class="md-nav__icon md-icon"></span>
       Table of contents
     </label>
     <ul class="md-nav__list" data-md-scrollfix>
@@ -929,9 +1002,6 @@
                   </a>
                 
                 
-                  
-                
-                
                 <h1 id="proof-of-work">Proof of Work<a class="headerlink" href="#proof-of-work" title="Permanent link">&para;</a></h1>
 <blockquote>
 <p>Proof of work is a way to legitimize untrusted party</p>
@@ -973,7 +1043,7 @@ who could DoS the verifier by submitting invalid proofs. Such proofs should be t
     <div class="md-footer-nav">
       <nav class="md-footer-nav__inner md-grid" aria-label="Footer">
         
-          <a href="../../public-address/integrated-address/" title="Integrated" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+          <a href="../../public-address/integrated-address/" class="md-footer-nav__link md-footer-nav__link--prev" rel="prev">
             <div class="md-footer-nav__button md-icon">
               <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12z"/></svg>
             </div>
@@ -988,7 +1058,7 @@ who could DoS the verifier by submitting invalid proofs. Such proofs should be t
           </a>
         
         
-          <a href="../pow-in-cryptocurrencies/" title="PoW in Cryptocurrencies" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
+          <a href="../pow-in-cryptocurrencies/" class="md-footer-nav__link md-footer-nav__link--next" rel="next">
             <div class="md-footer-nav__title">
               <div class="md-ellipsis">
                 <span class="md-footer-nav__direction">
@@ -1021,15 +1091,15 @@ who could DoS the verifier by submitting invalid proofs. Such proofs should be t
       
     </div>
     
-      <script src="../../assets/javascripts/vendor.877163d5.min.js"></script>
-      <script src="../../assets/javascripts/bundle.1688372e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents"}</script>
+      <script src="../../assets/javascripts/vendor.93c04032.min.js"></script>
+      <script src="../../assets/javascripts/bundle.83e5331e.min.js"></script><script id="__lang" type="application/json">{"clipboard.copy": "Copy to clipboard", "clipboard.copied": "Copied to clipboard", "search.config.lang": "en", "search.config.pipeline": "trimmer, stopWordFilter", "search.config.separator": "[\\s\\-]+", "search.placeholder": "Search", "search.result.placeholder": "Type to start searching", "search.result.none": "No matching documents", "search.result.one": "1 matching document", "search.result.other": "# matching documents", "search.result.more.one": "1 more on this page", "search.result.more.other": "# more on this page", "search.result.term.missing": "Missing"}</script>
       
       <script>
         app = initialize({
           base: "../..",
           features: [],
           search: Object.assign({
-            worker: "../../assets/javascripts/worker/search.a68abb33.min.js"
+            worker: "../../assets/javascripts/worker/search.8c7e0a7e.min.js"
           }, typeof search !== "undefined" && search)
         })
       </script>
