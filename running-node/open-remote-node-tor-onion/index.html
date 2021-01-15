@@ -953,6 +953,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#further-improvements" class="md-nav__link">
+    Further improvements
+  </a>
+  
+    <nav class="md-nav" aria-label="Further improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#periodic-restarts" class="md-nav__link">
+    Periodic restarts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1133,6 +1153,26 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#further-improvements" class="md-nav__link">
+    Further improvements
+  </a>
+  
+    <nav class="md-nav" aria-label="Further improvements">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#periodic-restarts" class="md-nav__link">
+    Periodic restarts
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -1152,8 +1192,19 @@
                 
                 <h1 id="open-remote-node-tor-onion">Open Remote Node + Tor Onion<a class="headerlink" href="#open-remote-node-tor-onion" title="Permanent link">&para;</a></h1>
 <div class="admonition success">
-<p class="admonition-title">Powerful Setup</p>
-<p>This is the strongest contribution to Monero network and also a pretty sophisticated personal setup. If you are a beginner, you don't need this.</p>
+<p class="admonition-title">Powerful setup</p>
+<p>This is powerful contribution to Monero network and also a pretty sophisticated personal setup. If you are a beginner, you don't need this.</p>
+</div>
+<div class="admonition info">
+<p class="admonition-title">The end goal</p>
+<p>You will publicly offer the following services, where xxx.yyy.zzz.vvv is your server IP address.</p>
+<ul>
+<li>xxx.yyy.zzz.vvv:18080 - clearnet P2P service (for other nodes)</li>
+<li>xxx.yyy.zzz.vvv:18081 - clearnet RPC service (for wallets)</li>
+<li>yourlongv3onionaddress.onion:18083 - onion P2P service (for other onion nodes)</li>
+<li>yourlongv3onionaddress.onion:18081 - onion RPC service (for wallets connecting over Tor)</li>
+</ul>
+<p>Why different P2P ports for clearnet and onion? This is a <code>monerod</code> requirement.</p>
 </div>
 <div class="admonition warning">
 <p class="admonition-title">Broadcasting bad transactions from your IP</p>
@@ -1296,12 +1347,12 @@ This is useful for beginner users who don't run their own nodes yet.</p>
 </code></pre></div>
 <h2 id="open-firewall-ports">Open firewall ports<a class="headerlink" href="#open-firewall-ports" title="Permanent link">&para;</a></h2>
 <p>If you use a firewall (and you should), open <code>18080</code> and <code>18081</code> ports for incoming TCP connections. These are for the incoming <strong>clearnet</strong> connections, P2P and RPC respectively.</p>
-<p>You <strong>do not</strong> need to open any ports for Tor. The onion services work with virtual ports. The <code>tor</code> daemon does not directly accept incoming connections and so needs no open ports.</p>
+<p>You <strong>do not</strong> need to open any ports for Tor. The onion services work with virtual ports. The <code>tor</code> daemon does not directly accept incoming connections and so it needs no open ports.</p>
 <p>For example, for popular ufw firewall, that would be:</p>
 <div class="highlight"><pre><span></span><code>ufw allow <span class="m">18080</span>/tcp
 ufw allow <span class="m">18081</span>/tcp
 </code></pre></div>
-<p>To verify use <code>ufw status</code>. The output should be similar to the following (the <code>22</code> being default SSH port, unrelated to Monero):</p>
+<p>To verify, use <code>ufw status</code>. The output should be similar to the following (the <code>22</code> being default SSH port, unrelated to Monero):</p>
 <div class="highlight"><pre><span></span><code>To                         Action      From
 --                         ------      ----
 22/tcp                     LIMIT       Anywhere                  
@@ -1347,6 +1398,10 @@ tcp        0      0 127.0.0.1:9050          0.0.0.0:*               LISTEN      
 <li>Logs: <code>tail -n100 /var/log/monero/monero.log</code></li>
 <li>Logs more info: change <code>log-level=0</code> to <code>log-level=1</code> in <code>monero.conf</code> (remember to revert once solved)</li>
 </ul>
+<h2 id="further-improvements">Further improvements<a class="headerlink" href="#further-improvements" title="Permanent link">&para;</a></h2>
+<h3 id="periodic-restarts">Periodic restarts<a class="headerlink" href="#periodic-restarts" title="Permanent link">&para;</a></h3>
+<p>It's likely worthwhile to add peridic auto-restarting to both <code>tor</code> and <code>monerod</code> every couple hours. Neither daemon is perfect; they can get stuck or leak memory in edge case situations,
+like the recent attacks on Tor v3 or DDoS attacks on the Monero network. One possible way would be to use systemd timers.</p>
                 
                   
                 
