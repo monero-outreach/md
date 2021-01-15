@@ -13,14 +13,14 @@
         <meta name="author" content="Piotr 'Qertoip' Włodarek">
       
       
-        <link rel="canonical" href="https://monerodocs.org/running-node/open-remote-node-tor-onion/">
+        <link rel="canonical" href="https://monerodocs.org/running-node/open-node-tor-onion/">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
       <meta name="generator" content="mkdocs-1.1.2, mkdocs-material-6.2.4">
     
     
       
-        <title>Open Remote Node with Tor Onion Support - Monero Documentation</title>
+        <title>Running Monero Open Node with Tor Onion Support - Monero Documentation</title>
       
     
     
@@ -70,7 +70,7 @@
     <div data-md-component="skip">
       
         
-        <a href="#open-remote-node-tor-onion" class="md-skip">
+        <a href="#running-monero-open-node-tor-onion" class="md-skip">
           Skip to content
         </a>
       
@@ -101,7 +101,7 @@
         <div class="md-header-nav__topic">
           <span class="md-ellipsis">
             
-              Open Remote Node with Tor Onion Support
+              Running Monero Open Node with Tor Onion Support
             
           </span>
         </div>
@@ -830,12 +830,12 @@
     
     
       <label class="md-nav__link md-nav__link--active" for="__toc">
-        Open Remote Node + Tor Onion
+        Open Node + Tor Onion
         <span class="md-nav__icon md-icon"></span>
       </label>
     
     <a href="./" class="md-nav__link md-nav__link--active">
-      Open Remote Node + Tor Onion
+      Open Node + Tor Onion
     </a>
     
       
@@ -1185,15 +1185,15 @@
             <article class="md-content__inner md-typeset">
               
                 
-                  <a href="https://github.com/monerodocs/md/edit/master/docs/running-node/open-remote-node-tor-onion.md" title="Edit this page" class="md-content__button md-icon">
+                  <a href="https://github.com/monerodocs/md/edit/master/docs/running-node/open-node-tor-onion.md" title="Edit this page" class="md-content__button md-icon">
                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25z"/></svg>
                   </a>
                 
                 
-                <h1 id="open-remote-node-tor-onion">Open Remote Node + Tor Onion<a class="headerlink" href="#open-remote-node-tor-onion" title="Permanent link">&para;</a></h1>
+                <h1 id="running-monero-open-node-tor-onion">Running Monero Open Node + Tor Onion<a class="headerlink" href="#running-monero-open-node-tor-onion" title="Permanent link">&para;</a></h1>
 <div class="admonition success">
 <p class="admonition-title">Powerful setup</p>
-<p>This is powerful contribution to Monero network and also a pretty sophisticated personal setup. If you are a beginner, you don't need this.</p>
+<p>This is great contribution to Monero network and also a pretty sophisticated personal setup. If you are a beginner, you don't need this.</p>
 </div>
 <div class="admonition info">
 <p class="admonition-title">The end goal</p>
@@ -1227,7 +1227,7 @@ This is useful for beginner users who don't run their own nodes yet.</p>
 <p><a href="https://2019.www.torproject.org/docs/debian.html.en#ubuntu">Install Tor</a>.</p>
 <p>Modify <code>/etc/tor/torrc</code> as shown below.</p>
 <p>Enable tor service with <code>systemctl enable tor</code> and restart it via <code>systemctl restart tor</code></p>
-<p>Verify the Tor is up <code>systemctl status tor@default.service</code></p>
+<p>Verify the Tor is up <code>systemctl status tor@default</code></p>
 <p>A fresh onion address and corresponding key pair got created for you by the <code>tor</code> daemon in <code>/var/lib/tor/monero/</code>. You may want to backup these to secure control over your onion address. This happens on restart whenever you add new <code>HiddenServiceDir</code> to <code>torrc</code> config.</p>
 <p>Monero daemon itself is not necessary at this point. The onion services (AKA hidden services) will just wait until localhost <code>monerod</code> shows up at specified ports 18081 and 18083.</p>
 <h3 id="etctortorrc">/etc/tor/torrc<a class="headerlink" href="#etctortorrc" title="Permanent link">&para;</a></h3>
@@ -1246,7 +1246,7 @@ This is useful for beginner users who don't run their own nodes yet.</p>
 <p><a href="/interacting/download-monero-binaries/">Download</a> and <a href="/interacting/verify-monero-binaries/">verify</a> the file.</p>
 <p>Extract <code>tar -xf monero-linux-x64-v0.17.1.9.tar.bz2</code> (adjust filename).</p>
 <p>Move binaries to <code>/opt/monero/</code> with <code>mv monero-x86_64-linux-gnu-v0.17.1.9/* /opt/monero/</code> then <code>chown -R monero:monero /opt/monero</code></p>
-<p>Create <code>/etc/monero.conf</code> as shown below - <strong>past your values in placeholders</strong>.</p>
+<p>Create <code>/etc/monero.conf</code> as shown below and <strong>paste your values in placeholders</strong>.</p>
 <p>Create <code>/etc/systemd/system/monero.service</code> as shown below.</p>
 <p>Enable monero service with <code>systemctl enable monero</code> and restart it with <code>systemctl restart monero</code></p>
 <p>Verify it is up <code>systemctl status monero</code></p>
