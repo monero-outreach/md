@@ -1161,8 +1161,9 @@
 <p>This use case overlaps with integrated addresses. Subaddresses are generally prefered for reasons outlined below.</p>
 <h2 id="prevent-payer-from-linking-your-payouts-together">Prevent payer from linking your payouts together<a class="headerlink" href="#prevent-payer-from-linking-your-payouts-together" title="Permanent link">&para;</a></h2>
 <p>To prevent the payer from linking your payouts together simply generate a new subaddress for each payout.
-This way services like <a href="https://shapeshift.io">Shapeshift</a> wouldn't know it is you again receving Monero.</p>
-<p>Note it won't help if you have an account with the service. Then your payouts are already linked in the service database, regardless of Monero.</p>
+This way specific service (like anonymous exchange) that sends you Monero won't (easilly) know it is you again receving Monero.</p>
+<p>The exception to this is when a service (or group of colluding services) decides to actively attack you, one address at the time, with the so cold <a href="https://web.getmonero.org/2019/10/18/subaddress-janus.html">Janus attack</a>, which risks them losing funds. If you need perfect unlinkability of your receivables, the only solution remains to use a separate seed (separate Monero wallet).</p>
+<p>Also, note it won't help if you have an account with the service. Then your payouts are already linked in the service database, regardless of Monero.</p>
 <h2 id="group-funds-into-accounts">Group funds into accounts<a class="headerlink" href="#group-funds-into-accounts" title="Permanent link">&para;</a></h2>
 <p><strong>Accounts</strong> are a convenience wallet-level feature to group subaddresses under one label and balance.</p>
 <p>You may want to organize your funds into accounts like "cash", "work", "trading", "mining", "donations", etc.</p>
