@@ -13,4 +13,4 @@ El objetivo es educar e incorporar a los usuarios avanzados más rápido.
 
 Envíe sus comentarios y correcciones directamente en github. Encuentre mis datos de contacto en qertoip.com
 
-Traducción al Español realizada por morphix. Email:sistelco19@gmail.com.
+Traducción al Español realizada por morphix. Email: sistelco19@gmail.com.
